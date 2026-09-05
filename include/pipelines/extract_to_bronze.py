@@ -6,11 +6,12 @@ import duckdb
 from datetime import datetime
 
 # Astro container absolute path to your dbt project folder
-DB_FILE = "/usr/local/airflow/include/dbt_project/northwind.duckdb"
+DB_FILE = "/usr/local/airflow/include/data/northwind.duckdb"
 
 def extract_and_load_endpoint(endpoint_name):
     """
-    Extracts data from the public Northwind API and streams it into the local DuckDB [Bronze Layer]
+    Extracts data from the Northwind API and loads it
+    into DuckDB Bronze layer.
     """
     API_URL = f"https://northwind.vercel.app/api/{endpoint_name}"
     print(f"[{datetime.now()}] Starting extraction for endpoint: '{endpoint_name}'")

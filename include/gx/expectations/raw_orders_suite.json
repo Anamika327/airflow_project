@@ -1,0 +1,19 @@
+{
+  "expectations": [
+    {
+      "id": "73afb527-46af-40ea-863d-63c9d2f12d52",
+      "kwargs": {
+        "column": "id"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    }
+  ],
+  "id": "6b194667-8cd6-4275-b1c4-d3d9cbe25e4c",
+  "meta": {
+    "great_expectations_version": "1.22.0"
+  },
+  "name": "raw_orders_suite",
+  "notes": null
+}

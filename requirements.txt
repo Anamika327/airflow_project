@@ -4,3 +4,5 @@ duckdb
 dbt-duckdb
 pandas
 requests
+great_expectations
+duckdb-engine
