@@ -1,0 +1,7 @@
+northwind:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: /usr/local/airflow/include/data/northwind.duckdb
+      schema: main

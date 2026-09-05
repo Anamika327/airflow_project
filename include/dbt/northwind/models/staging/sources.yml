@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: bronze
+    schema: bronze
+
+    tables:
+      - name: raw_orders
+      - name: raw_customers
+      - name: raw_products
+      - name: raw_suppliers
+      - name: raw_categories
