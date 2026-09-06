@@ -4,4 +4,4 @@ northwind:
     dev:
       type: duckdb
       path: /usr/local/airflow/include/data/northwind.duckdb
-      schema: main
+      schema: silver

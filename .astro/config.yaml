@@ -1,5 +1,2 @@
 project:
     name: airflow-project
-docker:
-  volumes:
-    - ./data:/usr/local/airflow/data
