@@ -1,9 +1,13 @@
+# Project Structure
+
+```text
 airflow_project/
 │
 ├── dags/
 │   └── northwind_pipeline.py
 │
 ├── include/
+│   │
 │   ├── data/
 │   │   └── northwind.duckdb
 │   │
@@ -25,10 +29,12 @@ airflow_project/
 │       └── northwind/
 │           ├── dbt_project.yml
 │           ├── profiles.yml
+│           │
 │           ├── models/
 │           │   └── staging/
 │           │       ├── sources.yml
 │           │       └── stg_orders.sql
+│           │
 │           ├── macros/
 │           ├── seeds/
 │           ├── snapshots/
@@ -36,5 +42,7 @@ airflow_project/
 │           └── analyses/
 │
 ├── Dockerfile
+│
 └── .astro/
     └── config.yaml
+```
