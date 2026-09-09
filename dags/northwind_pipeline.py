@@ -1,23 +1,20 @@
 from datetime import datetime
 
-from airflow import DAG
-from airflow.operators.python import PythonOperator
-from airflow.operators.bash import BashOperator
+from airflow.providers.standard.operators.bash import BashOperator
+from airflow.providers.standard.operators.python import PythonOperator
+from airflow.sdk import DAG
 
 
 def extract_bronze():
-    from pipelines.extract_to_bronze import main
+    from include.pipelines.extract_to_bronze import main
 
     main()
 
 
 def validate_bronze():
-    import runpy
+    from include.pipelines.validate_raw_orders import main
 
-    runpy.run_path(
-        "/usr/local/airflow/include/pipelines/validate_raw_orders.py",
-        run_name="__main__",
-    )
+    main()
 
 
 with DAG(

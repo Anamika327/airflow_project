@@ -67,22 +67,31 @@ def extract_and_load_endpoint(endpoint_name):
         if 'conn' in locals():
             conn.close()
 
-if __name__ == "__main__":
+def main():
     # Core target business objects needed to build out a complete transactional star schema
     target_endpoints = ["orders", "customers", "products", "suppliers", "categories"]
-    
+
     print("==================================================================")
     print(f"INGESTION STARTING AT: {datetime.now()}")
     print(f"TARGET STORE: {DB_FILE}")
     print("==================================================================\n")
-    
+
     for endpoint in target_endpoints:
         try:
             extract_and_load_endpoint(endpoint)
-        except Exception as abort_pipeline:
-            print(f"Critical Pipeline Interruption: Execution stopped due to failure on '{endpoint}'.")
-            sys.exit(1)
-            
+        except Exception:
+            print(
+                f"Critical Pipeline Interruption: Execution stopped due to failure on '{endpoint}'."
+            )
+            raise
+
     print("==================================================================")
     print("   BRONZE DATA EXTRACTION COMPLETE FOR ALL ENDPOINTS")
     print("==================================================================")
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except Exception:
+        sys.exit(1)
